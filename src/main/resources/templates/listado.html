@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+		<thead>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Nit</th>
+			<th>Fecha</th>
+			<th>Importancia</th>
+			
+		</thead>
+                <tbody>
+                	<th:block th:each="importancia, row:${importanciass}">
+                	<tr th:each="v : ${importancia.contribuyente}">
+                		<td th:text="${v.c_contribuyente}"></td>                	
+                		<td th:text="${v.s_nombre}"></td>
+                		<td th:text="${v.s_apellido}"></td>
+                		<td th:text="${v.s_nit}"></td>
+                		<td th:text="${v.f_fecha_ingreso}"></td>
+                		<td th:text="${importancia.s_importancia}"></td>
+                	</tr>
+                	</th:block>
+                </tbody>
+	</table>
+</body>
+</html>

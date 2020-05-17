@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>Estudiante</h1>
+  
+  <form method="post" th:action="@{/estudiante}">
+  
+  
+  
+  	<select th:field="*{importancia.C_importancia}">
+  		
+  		<option th:each="p : ${importancias}" th:value="${p.C_importancia}" th:text="${p.S_importancia}"></option>
+  		
+  	</select>
+   
+  	<label>Nombre</label><input type="text" th:field="*{contribuyente.s_nombre}"><br>
+
+	<label>Apellido</label><input type="text" th:field="*{contribuyente.s_apellido}"><br>
+	
+	<label>NIT</label><input type="text" th:field="*{contribuyente.s_nit}"><br>
+	
+	
+	
+	<input type="submit" value="Guardar">
+	<br>
+	<br>
+	<br>
+  </form>
+  <form method="get" th:action="@{/listado}"> 
+  <input type="submit" value="Listado Contribuyentes">
+  </form>
+</body>
+</html>
