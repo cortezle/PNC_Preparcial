@@ -31,10 +31,11 @@ public class MainController {
 	@RequestMapping("/inicio")
 	public ModelAndView initMain2() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("contribuyente", new Contribuyente() );
+		Contribuyente contribuyente =new Contribuyente();
+		mav.addObject("contribuyente",  contribuyente);
 		List<Importancia> importancias = null;
 		importancias = importanciaDAO.findAll();
-		mav.addObject("importancia", new Importancia());
+		mav.addObject("importancia", contribuyente.getImportancia());
 		mav.addObject("importancias", importancias);
 		
 		mav.setViewName("index");
@@ -44,8 +45,6 @@ public class MainController {
 	@RequestMapping("/exito")
 	public ModelAndView exito(@Valid @ModelAttribute Contribuyente contribuyente, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(contribuyente.getF_fecha_ingreso());
-		
 		contribuyenteDAO.insert(contribuyente);
 		mav.setViewName("exito");
 		return mav;
@@ -54,10 +53,10 @@ public class MainController {
 	@RequestMapping("/listado")
 	public ModelAndView listado() {
 		ModelAndView mav = new ModelAndView();
-		List<Importancia> importanciass =importanciaDAO.findAll(); 
-		Importancia importancias = importanciaDAO.findOne(2);
+		List<Contribuyente> contribuyentes = contribuyenteDAO.findAll(); 
+		
 		try {
-			mav.addObject("importanciass", importanciass);
+			mav.addObject("contribuyentes", contribuyentes);
 		}
 		catch(Exception e){
 			e.printStackTrace();

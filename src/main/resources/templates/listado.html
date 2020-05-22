@@ -15,15 +15,15 @@
 			<th>Importancia</th>
 			
 		</thead>
-                <tbody>
-                	<th:block th:each="importancia, row:${importanciass}">
-                	<tr th:each="v : ${importancia.contribuyente}">
+               <tbody>
+                	<th:block th:each="contribuyente, row:${contribuyentes}">
+                	<tr th:each="v : ${contribuyente}">
                 		<td th:text="${v.c_contribuyente}"></td>                	
                 		<td th:text="${v.s_nombre}"></td>
                 		<td th:text="${v.s_apellido}"></td>
                 		<td th:text="${v.s_nit}"></td>
                 		<td th:text="${v.f_fecha_ingreso}"></td>
-                		<td th:text="${importancia.s_importancia}"></td>
+                		<td th:text="${v.importancia.s_importancia}"></td>
                 	</tr>
                 	</th:block>
                 </tbody>

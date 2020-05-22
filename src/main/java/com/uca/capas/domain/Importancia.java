@@ -24,22 +24,10 @@ public class Importancia {
 	@Column(name="s_importancia")
 	private String s_importancia;
 	
-	@OneToMany(mappedBy = "importancia", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "importancia", fetch = FetchType.EAGER)
 	private List<Contribuyente> contribuyente;
 
 	
-	
-
-	public List<Contribuyente> getContribuyente() {
-		return contribuyente;
-	}
-
-
-	public void setContribuyente(List<Contribuyente> contribuyente) {
-		this.contribuyente = contribuyente;
-	}
-
-
 	public int getC_importancia() {
 		return c_importancia;
 	}

@@ -7,7 +7,7 @@
 <body>
   <h1>Estudiante</h1>
   
-  <form method="post" th:action="@{/exito}">
+  <form method="post" th:action="@{/exito}"  th:object="${contribuyente}">
   
   
   
@@ -17,11 +17,11 @@
   		
   	</select>
    
-  	<label>Nombre</label><input type="text" th:field="*{contribuyente.s_nombre}"><br>
+  	<label>Nombre</label><input type="text" th:field="*{s_nombre}"><br>
 
-	<label>Apellido</label><input type="text" th:field="*{contribuyente.s_apellido}"><br>
+	<label>Apellido</label><input type="text" th:field="*{s_apellido}"><br>
 	
-	<label>NIT</label><input type="text" th:field="*{contribuyente.s_nit}"><br>	
+	<label>NIT</label><input type="text" th:field="*{s_nit}"><br>	
 	
 	
 	<input type="submit" value="Guardar">
