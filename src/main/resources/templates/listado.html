@@ -22,11 +22,14 @@
                 		<td th:text="${v.s_nombre}"></td>
                 		<td th:text="${v.s_apellido}"></td>
                 		<td th:text="${v.s_nit}"></td>
-                		<td th:text="${v.f_fecha_ingreso}"></td>
+                		<td th:text="${#temporals.format(v.f_fecha_ingreso, 'dd-MM-yyyy')}"></td>
                 		<td th:text="${v.importancia.s_importancia}"></td>
                 	</tr>
                 	</th:block>
                 </tbody>
 	</table>
+	<form method="get" th:action="@{/inicio}"> 
+  <input type="submit" value="Regresar">
+  </form>
 </body>
 </html>

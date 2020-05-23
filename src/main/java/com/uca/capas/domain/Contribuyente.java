@@ -78,7 +78,7 @@ public class Contribuyente {
 	}
 
 	
-	
+	@DateTimeFormat(pattern="dd-MMM-YYYY")
 	public LocalDate getF_fecha_ingreso() {
 		return f_fecha_ingreso;
 	}
